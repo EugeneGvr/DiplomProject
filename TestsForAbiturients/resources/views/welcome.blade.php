@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <h1 style="color:red;">IVAN DO DIPLOM</h1>
                 </div>
 
                 <div class="links">
