@@ -13,7 +13,7 @@ class CreateAnswerQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('answer__questions', function (Blueprint $table) {
+        Schema::create('answer_questions', function (Blueprint $table) {
             $table->integer('question_id');
             $table->integer('answer_id');
             $table->boolean('result');

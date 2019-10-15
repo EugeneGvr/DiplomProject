@@ -1,12 +1,13 @@
 <?php
 
-use App\User;
-use Illuminate\Support\Facades\Schema;
+use App\Admin;
+
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,27 +16,32 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('second_name');
-            $table->string('city_id')->nullable();
-            $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
-
-        $admin = new User();
-        $admin
+        //Create administrators
+        $firstAdmin = new Admin();
+        $firstAdmin
             ->setAttribute('first_name', 'Евгений')
             ->setAttribute('second_name', 'Гаврилов')
-            ->setAttribute('username', 'eugene_gvr')
             ->setAttribute('email', 'link6596@gmail.com')
             ->setAttribute('password', Hash::make('ubuntu123'))
             ->save();
+
+        $firstAdmin = new Admin();
+        $firstAdmin
+            ->setAttribute('first_name', 'Иван')
+            ->setAttribute('second_name', 'Великий')
+            ->setAttribute('email', 'link6596@gmail.com')
+            ->setAttribute('password', Hash::make('ubuntu123'))
+            ->save();
+
     }
 
     /**
@@ -45,6 +51,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('admins');
     }
 }

@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/', 'DashboardController@index')->name('admin.index');
+    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\LoginController@login')->name('admin.login.submit');
+});

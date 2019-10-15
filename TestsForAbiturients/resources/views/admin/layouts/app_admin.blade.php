@@ -17,7 +17,7 @@
     <link href="{{ asset('css/admin/app_admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin/admin_popup.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="sidebar-mini" style="height:auto;">
   <div class = "popup-background"></div>
   <div class = "popup">
 {{--      <div class="content"></div>--}}
@@ -30,12 +30,15 @@
 {{--          <button class="btn btn-primary">Нет</button>--}}
 {{--      </div>--}}
   </div>
-  @include('admin.parts.toolbar')
-  <div class="content">
-    <div class="sidebar card"> @include('admin.parts.sidebar')</div>
-    <div class="main card">
-        @yield('content')
-    </div>
+  <div class="wrapper">
+      @include('admin.parts.toolbar')
+      @include('admin.parts.sidebar')
+{{--    <div class="main card">--}}
+{{--        @yield('content')--}}
+{{--    </div>--}}
+      <div class="content-wrapper" >
+
+      </div>
   </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
