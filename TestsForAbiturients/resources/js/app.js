@@ -8,6 +8,19 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+const routes = [
+    { path: '/admin/administrators', component: require('./components/Administrators.vue').default},
+    { path: '/admin/roles', component: require('./components/Roles.vue').default}
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,5 +42,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });

@@ -14,32 +14,36 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/admin/app_admin.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/admin/admin_popup.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/admin/admin_popup.css') }}" rel="stylesheet">--}}
 </head>
-<body class="sidebar-mini" style="height:auto;">
-  <div class = "popup-background"></div>
-  <div class = "popup">
-{{--      <div class="content"></div>--}}
-{{--      <div class="action">--}}
-{{--          <form class="" action="{{route('requests.destroy', 0)}}" method="post">--}}
-{{--              <input type="hidden" name="_method" value="DELETE">--}}
-{{--              {{csrf_field()}}--}}
-{{--              <button type="submit" class="btn btn-primary yes">Да</button>--}}
-{{--          </form>--}}
-{{--          <button class="btn btn-primary">Нет</button>--}}
-{{--      </div>--}}
-  </div>
-  <div class="wrapper">
-      @include('admin.parts.toolbar')
-      @include('admin.parts.sidebar')
-{{--    <div class="main card">--}}
+
+<body class="sidebar-mini" style="height: auto;">
+<div class="wrapper" id="app">
+    @include('admin.parts.toolbar')
+    @include('admin.parts.sidebar')
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 266px;">
+        <router-view></router-view>
 {{--        @yield('content')--}}
-{{--    </div>--}}
-      <div class="content-wrapper" >
+    </div>
+    <!-- /.content-wrapper -->
 
-      </div>
-  </div>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        <div class="p-3">
+            <h5>Title</h5>
+            <p>Sidebar content</p>
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Main Footer -->
+        @include('admin.parts.footer')
+    <div id="sidebar-overlay"></div></div>
+<!-- ./wrapper -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
+</html>
