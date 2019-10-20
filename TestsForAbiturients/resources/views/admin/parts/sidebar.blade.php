@@ -1,44 +1,63 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Sidebar admin panel -->
-    <div class="user-panel mt-3 pb-2 mb-3 d-flex">
-        <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2">
-        </div>
-        <div class="info">
-            <a href="#" class="d-block">Eugene Gavrilov</a>
-        </div>
-    </div>
-    <!-- ./Sidebar admin panel -->
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4 fixed">
+    <!-- Brand Logo -->
 
     <!-- Sidebar -->
-    <div class="sidebar os-host os-theme-light os-host-overflow
-                os-host-overflow-y os-host-resize-disabled
-                os-host-scrollbar-horizontal-hidden os-host-transition
-                ">
-                    <!-- Sidebar Menu -->
-                    <nav>
-                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-info"></i>
-                                    <p>@lang('navbar.administrators')</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-info"></i>
-                                    <p>@lang('navbar.users')</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-info"></i>
-                                    <p>@lang('navbar.permissions')</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- /.Sidebar-menu -->
-                </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div class="os-scrollbar-track"><div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden"><div class="os-scrollbar-track"><div class="os-scrollbar-handle" style="height: 25.0397%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar-corner"></div></div>
-    <!-- /.Sidebar -->
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-2 mb-3 d-flex">
+            <div class="image">
+                <img src="./images/default/avatar.png" class="img-circle" >
+            </div>
+            <div class="info">
+                Alexander Pierce
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <router-link to="/admin/administrators" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Administrators
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/admin/roles" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Roles
+                        </p>
+                    </router-link>
+                </li>
+{{--                <li class="nav-item has-treeview menu-open">--}}
+{{--                    <a href="#" class="nav-link active">--}}
+{{--                        <i class="nav-icon fas fa-tachometer-alt"></i>--}}
+{{--                        <p>--}}
+{{--                            Starter Pages--}}
+{{--                            <i class="right fas fa-angle-left"></i>--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                    <ul class="nav nav-treeview">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link active">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Active Page</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Inactive Page</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
 </aside>
